@@ -1,0 +1,7 @@
+export * from '@/shop/components/ProductsGrid'
+export * from '@/shop/components/CustomHeader'
+export * from '@/shop/components/FilterSidebar'
+export * from '@/shop/components/CustomJumbotron'
+export * from '@/shop/components/ProductCard'
+export * from '@/shop/components/CustomFooter'
+export * from '@/shop/components/CustomHeader'
