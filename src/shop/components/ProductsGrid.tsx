@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { Filter, Grid, List } from "lucide-react";
-import type { Product } from "@/mocks/products.mock"
 import { FilterSidebar, ProductCard } from '@/shop/components'
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { useState } from "react";
+import type { Product } from "@/interfaces/product.interface";
 
 
 interface Props {
@@ -95,15 +95,18 @@ export const ProductsGrid = ({ products }: Props) => {
                                 viewMode === 'grid'
                                     ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
                                     : "space-y-4"}   >
-                                {products.map((product) => (
-                                    <ProductCard
-                                        key={product.id}
-                                        id={product.id}
-                                        name={product.name}
-                                        price={product.price}
-                                        image={product.image}
-                                        category={product.category}
-                                    />
+                                {products.slice(0, 9).map((product, key) => (
+                                    <Link key={key} to={`product/${product.title}`} >
+                                        <ProductCard
+                                            id={product.id}
+                                            name={product.title}
+                                            price={product.price}
+                                            image={product.images[0]}
+                                            category={product.tags}
+                                            gender={product.gender}
+                                            sizes={product.sizes}
+                                        />
+                                    </Link>
                                 ))}
                             </div>
                         </div>

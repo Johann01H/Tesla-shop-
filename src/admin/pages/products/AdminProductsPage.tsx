@@ -8,7 +8,6 @@ import { Link } from "react-router"
 export const AdminProductsPage = () => {
     return (
         <>
-
             <div className="flex justify-between items-center">
                 <AdminTitle
                     title="Productos"
