@@ -5,11 +5,13 @@ import { GenderPage, HomePage, ProductPage } from './shop/pages'
 import { LoginPage, RegisterPage } from './auth/pages'
 import { DashBoardPage } from "./admin/pages/dashboard/DashBoardPage";
 import { AdminProductPage, AdminProductsPage } from "./admin/pages";
+import { AdminRoute, NotAuthenticatedRoute } from "./components/routes/ProtectedRoutes";
 
 const AdminLayout = lazy(() => import("./admin/layouts/AdminLayout"));
 const AuthLayout = lazy(() => import("./auth/layouts/AuthLayout"));
 
 export const appRouter = createBrowserRouter([
+
     // Main Routes
     {
         path: '/',
@@ -32,7 +34,10 @@ export const appRouter = createBrowserRouter([
     // Auth Routes
     {
         path: '/auth',
-        element: <AuthLayout />,
+        element:
+            <NotAuthenticatedRoute>
+                <AuthLayout />
+            </NotAuthenticatedRoute>,
         children: [
             {
                 index: true,
@@ -52,7 +57,10 @@ export const appRouter = createBrowserRouter([
     // Admin Routes
     {
         path: '/admin',
-        element: <AdminLayout />,
+        element:
+            <AdminRoute>
+                <AdminLayout />
+            </AdminRoute>,
         children: [
             {
                 index: true,
