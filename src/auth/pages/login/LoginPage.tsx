@@ -29,6 +29,7 @@ export const LoginPage = () => {
         const password = formData.get('password') as string;
 
         const isValid = await login(email, password);
+
         if (isValid) {
             navigate('/');
             return;

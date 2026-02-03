@@ -40,9 +40,6 @@ export const useProducts = () => {
             maxPrice = undefined
     }
 
-
-
-
     return useQuery({
 
         queryKey: ['products', { offset, limit, gender, sizes, minPrice, maxPrice, q }],
