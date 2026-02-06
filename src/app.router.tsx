@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { createBrowserRouter, createHashRouter, Navigate } from "react-router";
+import { createHashRouter, Navigate } from "react-router";
 import { ShopLayout } from "./shop/layouts/ShopLayout";
 import { GenderPage, HomePage, ProductPage } from './shop/pages'
 import { LoginPage, RegisterPage } from './auth/pages'
